@@ -372,7 +372,7 @@ class Game:
         self.player.player_y += self.gravity - self.player.velocity_y
 
     def check_enemy_collision(self):
-        global sound_state
+        global sound_state, current_state
 
         #Enemies is a List with 4 enemies
         enemies = self.enemies
@@ -390,7 +390,6 @@ class Game:
         self.draw_map()
     
     def update(self):
-        global current_state
         # Player and Mobs update
         self.player.update()
         for enemy in self.enemies:
@@ -460,3 +459,4 @@ def on_mouse_down(pos):
 
 # Start Game
 pgzrun.go()
+
